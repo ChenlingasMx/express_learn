@@ -10,7 +10,9 @@ const datas = [{ id: 1, name: "周杰伦" }];
 app.get("/singer/:id", (req, res) => {
   const { id } = req.params;
   const result = datas.find((item) => item.id === Number(id)) || {};
-  res.end(`
+  //   res.status(200)
+  //   res.set('aaa','bbb')
+  res.send(`
   <!DOCTYPE html>
   <html lang="en">
     <head>
@@ -19,7 +21,7 @@ app.get("/singer/:id", (req, res) => {
       <title>Document</title>
     </head>
     <body>
-        <div>${result.name || '-' }</div>
+        <div>${result.name || "-"}</div>
     </body>
   </html>
   
